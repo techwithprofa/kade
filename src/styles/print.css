@@ -1,0 +1,88 @@
+@media print {
+  /* Reset page margins and set A4 size */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Hide non-printable elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Container for all cards */
+  .print-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white !important;
+    page-break-after: always;
+  }
+
+  /* Individual card styling */
+  .print-card {
+    width: 85mm;
+    height: 54mm;
+    margin: auto;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* Force background colors */
+  .bg-blue-600,
+  .bg-gradient-to-b,
+  [class*="bg-"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    forced-color-adjust: exact !important;
+    background-color: #2563eb !important;
+    color: white !important;
+  }
+
+  /* Ensure QR codes and barcodes print clearly */
+  svg,
+  img,
+  .qr-code,
+  .barcode {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Ensure backgrounds and colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    forced-color-adjust: exact !important;
+  }
+
+  /* Remove shadows and add borders instead */
+  .shadow-lg,
+  .shadow-md,
+  .shadow-sm {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+}
