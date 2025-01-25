@@ -10,7 +10,7 @@ interface EmployeeIdCardProps {
 
 const EmployeeIdCard: React.FC<EmployeeIdCardProps> = ({ employee }) => {
   return (
-    <div className="w-[70mm] h-[110mm] mx-auto bg-gradient-to-b from-blue-50 to-white rounded-2xl shadow-lg overflow-hidden relative">
+    <div className="w-[7cm] h-[11cm] mx-auto bg-gradient-to-b from-blue-50 to-white rounded-2xl shadow-lg overflow-hidden relative">
       {/* Punch Hole Area */}
       <div className="h-[10mm] w-full bg-transparent" />
       
