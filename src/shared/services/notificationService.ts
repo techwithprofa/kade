@@ -1,4 +1,4 @@
-import { Notification, NotificationType } from '@/components/NotificationsPage';
+import { Notification, NotificationType } from '@/features/notifications/NotificationsPage';
 
 // Mock notifications data
 const mockNotifications: Notification[] = [

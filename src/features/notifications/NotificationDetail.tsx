@@ -22,14 +22,16 @@ const NotificationDetail: React.FC<NotificationDetailProps> = ({ notification })
   return (
     <Card>
       <CardContent>
-        <Typography component="div" variant="h5" gutterBottom>
+        <Typography component="span" variant="h5" gutterBottom>
           {notification.title}
         </Typography>
-        <Typography component="div" color="textSecondary" gutterBottom>
+        <Typography component="span" variant="body2" color="text.secondary" gutterBottom>
           {new Date(notification.timestamp).toLocaleString()}
         </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Typography component="div" variant="body1">{notification.message}</Typography>
+        <Box component="span" sx={{ mt: 2, display: 'block' }}>
+          <Typography component="span" variant="body1">
+            {notification.message}
+          </Typography>
         </Box>
       </CardContent>
       <CardActions>

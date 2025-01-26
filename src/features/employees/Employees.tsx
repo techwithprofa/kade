@@ -23,7 +23,7 @@ import BadgeIcon from '@mui/icons-material/Badge';
 import EmployeeIdCard from './EmployeeIdCard';
 import PrintableIdCard from './PrintableIdCard';
 import PrintIcon from '@mui/icons-material/Print';
-import { generateEmployeeId } from '@/types/employee';
+import { generateEmployeeId } from '@/shared/types/employee';
 import '@/styles/print.css';
 
 interface Employee {
@@ -51,27 +51,19 @@ const Employees = () => {
     dateOfBirth: '',
   });
 
-  // Mock data - Replace this with actual API calls
   useEffect(() => {
+    // Mock data
     setEmployees([
       {
-        id: generateEmployeeId(),
+        id: 'EMP001',
         name: 'John Doe',
         email: 'john@example.com',
-        position: 'Software Engineer',
-        department: 'Engineering',
-        contactNumber: '+1234567890',
+        position: 'Developer',
+        department: 'IT',
+        contactNumber: '123-456-7890',
         dateOfBirth: '1990-01-01',
       },
-      {
-        id: generateEmployeeId(),
-        name: 'Jane Smith',
-        email: 'jane@example.com',
-        position: 'Product Manager',
-        department: 'Product',
-        contactNumber: '+1987654321',
-        dateOfBirth: '1992-05-15',
-      },
+      // Add more mock employees as needed
     ]);
   }, []);
 

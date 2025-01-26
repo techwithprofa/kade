@@ -3,7 +3,7 @@
 import React from 'react';
 import { List, ListItem, ListItemButton, ListItemText, Paper, Typography } from '@mui/material';
 import { Notification, NotificationType } from './NotificationsPage';
-import { getNotificationsByType } from '@/services/notificationService';
+import { getNotificationsByType } from '@/shared/services/notificationService';
 
 interface NotificationListProps {
   type: NotificationType;

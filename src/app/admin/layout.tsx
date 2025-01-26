@@ -1,6 +1,6 @@
 'use client';
 
-import AdminNavbar from '@/components/admin/AdminNavbar';
+import AdminNavbar from '@/features/admin/AdminNavbar';
 import { Container } from '@mui/material';
 
 export default function AdminLayout({

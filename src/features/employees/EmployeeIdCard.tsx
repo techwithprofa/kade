@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import { Employee } from '@/types/employee';
+import { Employee } from '@/shared/types/employee';
 import QRCode from 'react-qr-code';
 import Barcode from 'react-barcode';
 

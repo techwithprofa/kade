@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Employee } from '@/types/employee';
+import { Employee } from '@/shared/types/employee';
 import EmployeeIdCard from './EmployeeIdCard';
 import '@/styles/print.css';
 

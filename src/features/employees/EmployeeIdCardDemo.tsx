@@ -1,20 +1,20 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Employee, generateEmployeeId } from '@/types/employee';
+import { Employee, generateEmployeeId } from '@/shared/types/employee';
 import EmployeeIdCard from './EmployeeIdCard';
 import PrintableIdCard from './PrintableIdCard';
 import '@/styles/print.css';
 
 const EmployeeIdCardDemo: React.FC = () => {
-  const [employee, setEmployee] = useState<Employee>({
+  const [employee, setEmployee] = useState<Employee>(() => ({
     id: generateEmployeeId(),
     name: '',
     contactNumber: '',
     position: '',
     department: '',
     dateOfBirth: '',
-  });
+  }));
 
   const [showPrintLayout, setShowPrintLayout] = useState(false);
 

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, Stack, Typography, Paper, List, ListItem, ListItemButton, ListItemText, Divider } from '@mui/material';
 import NotificationDetail from './NotificationDetail';
-import { getNotifications } from '@/services/notificationService';
+import { getNotifications } from '@/shared/services/notificationService';
 
 export type NotificationType = 'admin' | 'tech' | 'repair' | 'system';
 
@@ -19,8 +19,12 @@ export interface Notification {
 const NotificationsPage: React.FC = () => {
   const [selectedType, setSelectedType] = useState<NotificationType | null>(null);
   const [selectedNotification, setSelectedNotification] = useState<Notification | null>(null);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
 
-  const notifications = getNotifications();
+  useEffect(() => {
+    setNotifications(getNotifications());
+  }, []);
+
   const filteredNotifications = selectedType 
     ? notifications.filter(n => n.type === selectedType)
     : notifications;
@@ -91,20 +95,22 @@ const NotificationsPage: React.FC = () => {
                   <ListItemButton onClick={() => handleNotificationClick(notification)}>
                     <ListItemText
                       primary={
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <Typography component="div" variant="subtitle1">{notification.title}</Typography>
-                          <Typography component="div" variant="caption" color="text.secondary">
+                        <Box component="span" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Typography component="span" variant="subtitle1">
+                            {notification.title}
+                          </Typography>
+                          <Typography component="span" variant="caption" color="text.secondary">
                             {new Date(notification.timestamp).toLocaleString()}
                           </Typography>
                         </Box>
                       }
                       secondary={
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <Typography 
-                            component="div"
-                            variant="body2" 
-                            color="text.secondary" 
-                            sx={{ 
+                        <Box component="span" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Typography
+                            component="span"
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
                               display: '-webkit-box',
@@ -116,7 +122,7 @@ const NotificationsPage: React.FC = () => {
                             {notification.message}
                           </Typography>
                           <Typography
-                            component="div"
+                            component="span"
                             variant="caption"
                             sx={{
                               textTransform: 'uppercase',

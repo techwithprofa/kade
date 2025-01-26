@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Badge } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useRouter } from 'next/navigation';
-import { getUnreadCount } from '@/services/notificationService';
+import { getUnreadCount } from '@/shared/services/notificationService';
 
 const AdminNavbar = () => {
   const router = useRouter();
@@ -28,6 +28,14 @@ const AdminNavbar = () => {
             sx={{ '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}
           >
             Employees
+          </Button>
+          <Button 
+            color="inherit" 
+            component={Link}
+            href="/admin/products"
+            sx={{ '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' } }}
+          >
+            Products
           </Button>
           <Button 
             color="inherit"

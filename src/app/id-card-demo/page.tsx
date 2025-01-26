@@ -3,7 +3,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-const EmployeeIdCardDemo = dynamic(() => import('@/components/EmployeeIdCardDemo'), {
+const EmployeeIdCardDemo = dynamic(() => import('@/features/employees/EmployeeIdCardDemo'), {
   ssr: false
 });
 
